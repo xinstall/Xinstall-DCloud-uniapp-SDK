@@ -66,13 +66,21 @@ Xinstall 支持 DCloud 平台的 uni-app 插件接入，你可以在 [DCloud 插
 
 #### 3.2、配置 scheme
 
+**配置 安卓 scheme**
+
 在工程左边目录里找到 **mainfest.json** 文件，并点击该文件，在 **App常用其它配置** 中的 **Android设置 -> UrlSchemes** 框内填写 Xinstall 分配给应用的 scheme：
 
 ![配置scheme](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.0.0/step8.png)
 
+**配置 iOS scheme**
+
+在工程左边目录里找到 **mainfest.json** 文件，并点击该文件，在 **App常用其它配置** 中的 **iOS设置 -> UrlSchemes** 框内填写 Xinstall 分配给应用的 scheme：
+
+![配置scheme](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.0.0/step19.png)
+
 **字段介绍：**
 
-* UrlSchemes：如需使用一键拉起功能则必须配置。urlScheme 值详细获取位置：Xinstall 应用控制台-> Android集成-> 功能集成 中获取
+* UrlSchemes：如需使用一键拉起功能则必须配置。UrlScheme 值详细获取位置：Xinstall 应用控制台-> Android集成-> 功能集成 中获取
 
 
 
@@ -305,8 +313,8 @@ Android系统，iOS系统
 
 **入参说明**：需要主动传入2个参数
 
-- eventId：类型：字符串；描述：效果点ID，与 Xinstall 后台创建的效果点 ID 对应
-- eventValue：类型：数字类型；描述：效果点值
+- eventId：类型：字符串；描述：事件ID，与 Xinstall 后台创建的事件 ID 对应
+- eventValue：类型：数字类型；描述：事件值
 
 **回调说明**：无需传入回调函数
 
