@@ -74,6 +74,10 @@ Xinstall 支持 DCloud 平台的 uni-app 插件接入，你可以在 [DCloud 插
 
 ![配置scheme](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.0.0/step8.png)
 
+**字段介绍：**
+
+* UrlSchemes：如需使用一键拉起功能则必须配置。urlScheme 值详细获取位置：Xinstall 应用控制台 -> Android下载配置 中获取
+
 **配置 iOS scheme**
 
 在工程左边目录里找到 **mainfest.json** 文件，并点击该文件，在 **App常用其它配置** 中的 **iOS设置 -> UrlSchemes** 框内填写 Xinstall 分配给应用的 scheme：
@@ -82,7 +86,7 @@ Xinstall 支持 DCloud 平台的 uni-app 插件接入，你可以在 [DCloud 插
 
 **字段介绍：**
 
-* UrlSchemes：如需使用一键拉起功能则必须配置。UrlScheme 值详细获取位置：Xinstall 应用控制台-> Android集成-> 功能集成 中获取
+* UrlSchemes：如需使用一键拉起功能则必须配置。urlScheme 值详细获取位置：Xinstall 应用控制台 -> iOS下载配置 中获取
 
 
 
@@ -129,21 +133,17 @@ HBuilderX 2.3.0 开始云端打包支持配置 XCode 中的 Capabilities [参考
 
 代码集成完毕后，需要通过 [发行]-[原生App-云打包] 导出 iOS 和 Android 安装包，并上传 Xinstall 控制台里对应的 App：
 
-**示例图片（iOS 端）：** ![img](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.0.0/step11.png)
+**示例图片（iOS 端）：** ![img](https://cdn.xinstall.com/APICloud%E7%B4%A0%E6%9D%90/v1.1.0/step8.png)
 
-**示例图片（Android 端）：** ![img](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.0.0/step12.png)
+**示例图片（Android 端）：** ![img](https://cdn.xinstall.com/APICloud%E7%B4%A0%E6%9D%90/v1.1.0/step9.png)
 
-上传完包后，需要进入 「iOS应用适配」和「Android应用配置」中选择下载的包的版本
+上传完包后，需要进入 「iOS下载配置」和「Android下载配置」中选择下载的包的版本
 
-**示例图片（iOS 端）：** ![img](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.0.0/step13.png)
+**示例图片（iOS 端）：** ![img](https://cdn.xinstall.com/APICloud%E7%B4%A0%E6%9D%90/v1.1.0/step10.png)
 
-![img](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.0.0/step14.png)
+**示例图片（Android 端）：** ![img](https://cdn.xinstall.com/APICloud%E7%B4%A0%E6%9D%90/v1.1.0/step12.png)
 
-**示例图片（Android 端）：** ![img](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.0.0/step15.png)
-
-![img](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.0.0/step16.png)
-
-> 注意：每次上传完新的 ipa 或者 apk 包后，均需要进入「iOS应用适配」和「Android应用配置」中重新选择下载的包的版本
+> 注意：每次上传完新的 ipa 或者 apk 包后，均需要进入「iOS下载配置」和「Android下载配置」中重新选择下载的包的版本
 
 
 
@@ -183,7 +183,7 @@ result：
 
 内部字段：
 
-```json
+```
 // 如果唤醒时没有携带任何参数，result 为一个空 json 对象：
 {}
 
@@ -252,7 +252,7 @@ result：
 
 内部字段：
 
-```json
+```
 // 如果没有获取到安装时携带的参数，result 为一个空 json 对象：
 {}
 
@@ -269,7 +269,7 @@ result：
             "自定义key2":"自定义value2"
         }
     },
-  	timeSpan: 12 // 数字类型。代表下载页面上点击开始下载按钮与第一次打开App时的时间间隔，单位为秒
+  	timeSpan: 12, // 数字类型。代表下载页面上点击开始下载按钮与第一次打开App时的时间间隔，单位为秒
   	isFirstFetch: true // boolean类型。代表是否为第一次获取到安装参数，只有第一次获取到时为 true
 }
 ```
@@ -374,7 +374,7 @@ Android系统，iOS系统
 
 ``` js
 const xinstall = uni.requireNativePlugin('xinstall-plugin');
-xinstall.reportEventPoint('createOrder', 13);
+xinstall.reportEventPoint('createOrder', 10);
 ```
 
 **补充说明**
