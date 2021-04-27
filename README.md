@@ -64,6 +64,8 @@ Xinstall 支持 DCloud 平台的 uni-app 插件接入，你可以在 [DCloud 插
 
 * APP_KEY：插件接入前准备工作时，从 Xinstall 平台获取的 AppKey
 
+> 【注意】：HBuilderX 3.1.1 ~ 3.1.2 版本存在 BUG，将导致 APP_KEY 输入框无法显示，从而无法输入。请将 HBuilderX 升级至 3.1.4 版本以上即可正常使用。
+
 #### 3.2、配置 scheme
 
 **配置 安卓 scheme**
@@ -229,7 +231,8 @@ result：
 ```json
 {
     channelCode: '渠道编号', //渠道编号
-    data: '个性化安装携带的参数'   //有携带参数，则返回数据，没有则为空
+    data: '个性化安装携带的参数',   //有携带参数，则返回数据，没有则为空
+  	isFirstFetch: true // true 或者 fasle。代表是否为第一次获取到安装参数，只有第一次获取到时为 true
 }
 ```
 
@@ -241,6 +244,7 @@ xinstall.addInstallEventListener(function(result){
     // 回调函数将在合适的时机被调用，这里编写拿到渠道编号以及携带参数后的业务逻辑代码
     var channelCode = result.channelCode;
     var data = result.data;
+    var isFirstFetch = result.isFirstFetch;
 );
 ```
 
