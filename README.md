@@ -117,6 +117,8 @@ HBuilderX 2.3.0 开始云端打包支持配置 XCode 中的 Capabilities [参考
     }
 ```
 
+> 若您的项目中已经有 `com.apple.developer.associated-domains` 字段，则直接在该数组中添加 Xinstall 分配给应用的关联域名 即可。
+
 **示例图片：**
 
 ![配置关联域名](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.0.0/step10.png)
