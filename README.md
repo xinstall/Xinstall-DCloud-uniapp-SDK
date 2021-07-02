@@ -183,7 +183,7 @@ result：
 
 内部字段：
 
-```
+```json
 // 如果唤醒时没有携带任何参数，result 为一个空 json 对象：
 {}
 
@@ -227,6 +227,52 @@ xinstall.addWakeUpEventListener(function(result){
 
 此方法用于获取动态唤醒参数，通过动态参数，在拉起APP时，获取由web网页中传递过来的，如邀请码、游戏房间号等自定义参数，通过注册监听后，获取web端传过来的自定义参数。请严格遵循示例中的调用顺序，否则可能导致获取不到唤醒参数。
 
+##### 【注意】Android 在开启应用宝功能后一键拉起配置
+
+如果我们在 Xinstall 后台对应 App 的 [安卓下载配置] 中开启应用宝功能，现在只支持**离线打包**。具体操作如下
+
+1. 在 App 的 **AndroidManifest.xml** 文件中将应用入口的 Activity io.dcloud.PandoraEntry 替换成 com.shubao.xinstallunisdk.XinstallPandoraEntry ，同时加入 android:launchMode="singleTask"
+
+   具体样例如下：
+
+   ```xml
+   <!-- 应用入口 -->
+   
+           <activity
+               android:name="com.shubao.xinstallunisdk.XinstallPandoraEntry"
+               android:theme="@style/TranslucentTheme"
+               android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc|fontScale"
+               android:hardwareAccelerated="true"
+               android:launchMode="singleTask"
+               android:windowSoftInputMode="adjustResize">
+               <intent-filter>
+                   <data android:scheme="hbuilder"/>
+                   <action android:name="android.intent.action.VIEW"/>
+   
+                   <category android:name="android.intent.category.DEFAULT"/>
+                   <category android:name="android.intent.category.BROWSABLE"/>
+               </intent-filter>
+               <intent-filter>
+                   <data android:mimeType="image/*"/>
+                   <action android:name="android.intent.action.SEND"/>
+                   <category android:name="android.intent.category.DEFAULT"/>
+               </intent-filter>
+               <intent-filter>
+                   <action android:name="android.intent.action.MAIN"/>
+                   <category android:name="android.intent.category.LAUNCHER"/>
+               </intent-filter>
+   
+               <intent-filter>
+                   <action android:name="android.intent.action.VIEW" />
+   
+                   <category android:name="android.intent.category.DEFAULT" />
+                   <category android:name="android.intent.category.BROWSABLE" />
+                   <data android:scheme="XINSTALL_SCHEME" />
+               </intent-filter>
+           </activity>
+   ```
+
+
 **可用性**
 
 Android系统，iOS系统
@@ -252,7 +298,7 @@ result：
 
 内部字段：
 
-```
+```json
 // 如果没有获取到安装时携带的参数，result 为一个空 json 对象：
 {}
 
@@ -305,8 +351,6 @@ xinstall.addInstallEventListener(function(result){
 Android系统，iOS系统
 
 可提供的 1.0.0 及更高版本
-
-
 
 ### 3、高级数据统计
 
