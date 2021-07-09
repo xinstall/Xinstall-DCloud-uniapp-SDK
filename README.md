@@ -109,13 +109,14 @@ HBuilderX 2.3.0 开始云端打包支持配置 XCode 中的 Capabilities [参考
 在 HBuilderX 中的 **manifest.json** 中配置关联域名（在 HBuilderX 中点击查看源码视图，或者使用其他编辑器工具打开这个文件）：
 
 * 节点路径："app-plus" -> "distribute" -> "ios" -> "capabilities" -> "entitlements"
-* 在对应节点下添加 `com.apple.developer.associated-domains` 字段，字段值为字符串数组，每个字符串为要关联的域名
+* 在对应节点下添加 `com.apple.developer.associated-domains` 字段，字段值为字符串数组，每个字符串为要关联的域名，一共需要添加两个：
 
 ``` xml
     "capabilities": {  
         "entitlements": {  
             "com.apple.developer.associated-domains": [  
-                "Xinstall 分配给应用的关联域名"  
+                "Xinstall 分配给应用的关联域名1",
+                "Xinstall 分配给应用的关联域名2"
             ]  
         }  
     }
@@ -125,7 +126,7 @@ HBuilderX 2.3.0 开始云端打包支持配置 XCode 中的 Capabilities [参考
 
 **示例图片：**
 
-![配置关联域名](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.0.0/step10.png)
+![配置关联域名](https://cdn.xinstall.com/DCloudUniapp%E7%B4%A0%E6%9D%90/v1.1.4/step10.png)
 
 
 
