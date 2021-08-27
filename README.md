@@ -393,6 +393,12 @@ xinstall.addInstallEventListener(function(result){
 
 此接口用于获取动态安装参数，测试时候建议卸载再安装正确获取参数，在 APP 需要个性化安装参数时（由 web 网页中传递过来的，如邀请码、游戏房间号等自定义参数），在回调中获取参数，可实现跳转指定页面、统计渠道数据等。**调用该函数的时机建议越早越好，尽量在程序启动时进行注册，以免错过回调时机。**
 
+> 您可以在 Xinstall 管理后台对应的 App 内，看到所有的传递参数以及参数出现的次数，方便你们做运营统计分析，如通过该报表知道哪些页面或代理带来了最多客户，客户最感兴趣的 App 页面是什么等。具体参数名和值，运营人员可以和技术协商定义，或联系 Xinstall 客服咨询。具体效果如下图：
+>
+> ![传参报表](https://cdn.xinstall.com/iOS_SDK%E7%B4%A0%E6%9D%90/paramsTable.png)
+>
+> 
+
 **可用性**
 
 Android系统，iOS系统
@@ -700,7 +706,9 @@ Android系统，iOS系统
 
 ![AppStore_IDFA_6](https://cdn.xinstall.com/iOS_SDK%E7%B4%A0%E6%9D%90/IDFA_6.png)
 
+##### 5.3.2 Android 端
 
+无特殊需要注意，如碰上相关合规问题，参考 [《应用合规指南》](https://doc.xinstall.com/应用合规指南.html)
 
 
 
