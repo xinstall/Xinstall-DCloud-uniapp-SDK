@@ -1,7 +1,7 @@
 {
     "name": "xinstall-uniapp-plugin",
     "id": "xinstall-plugin",
-    "version": "1.5.3",
+    "version": "1.5.5",
     "description": "uni-app 集成 Xinstall SDK插件",
     "_dp_type": "nativeplugin",
     "_dp_nativeplugin": {
