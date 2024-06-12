@@ -201,6 +201,16 @@ Android系统，iOS系统
 
 可提供的 1.5.0 及更高版本
 
+#### initWithConfigure
+
+初始化方法。在调用 Xinstall 插件其他方法之前必须调用一次该方法，否则其他方法均无法正常执行。是 init 的androidId 及 serial 和粘贴板权限外部选择配置的变种
+
+```javascript
+const xinstall = uni.requireNativePlugin('xinstall-plugin');
+// 当不传入androidId 及 serial SDK 内部会自动获取。 当传入""则内部不获取，掺入空字符串。canClip控制是否使用粘贴板。
+xinstall.initWithConfigure({"canClip" : false,"androidId","", "serial" : "123"});
+```
+
 
 
 ### 3、携带参数安装/唤起

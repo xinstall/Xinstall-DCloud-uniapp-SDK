@@ -1,7 +1,7 @@
 {
     "name": "xinstall-uniapp-plugin",
     "id": "xinstall-plugin",
-    "version": "1.5.5",
+    "version": "1.7.0",
     "description": "uni-app 集成 Xinstall SDK插件",
     "_dp_type": "nativeplugin",
     "_dp_nativeplugin": {
@@ -31,8 +31,9 @@
                 "class": "com.shubao.xinstallunisdk.XInstallModule"
             }
         ],
+		"abis": ["armeabi-v7a"], 
         "integrateType": "aar",
-        "minSdkVersion": "23",
+        "minSdkVersion": "21",
         "parameters": {
             "APP_KEY": {
                 "des": "Xinstall管理后台分配的appkey",
