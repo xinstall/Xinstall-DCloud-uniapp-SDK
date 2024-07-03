@@ -1,7 +1,7 @@
 {
     "name": "xinstall-uniapp-plugin",
     "id": "xinstall-plugin",
-    "version": "1.7.0",
+    "version": "1.7.2",
     "description": "uni-app 集成 Xinstall SDK插件",
     "_dp_type": "nativeplugin",
     "_dp_nativeplugin": {
@@ -31,7 +31,7 @@
                 "class": "com.shubao.xinstallunisdk.XInstallModule"
             }
         ],
-		"abis": ["armeabi-v7a"], 
+		"abis": ["armeabi-v7a","arm64-v8a"],
         "integrateType": "aar",
         "minSdkVersion": "21",
         "parameters": {
