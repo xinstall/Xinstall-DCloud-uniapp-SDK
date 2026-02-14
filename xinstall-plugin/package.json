@@ -1,45 +1,48 @@
 {
     "name": "xinstall-uniapp-plugin",
     "id": "xinstall-plugin",
-    "version": "1.7.4",
+    "version": "1.7.6",
     "description": "uni-app 集成 Xinstall SDK插件",
     "_dp_type": "nativeplugin",
     "_dp_nativeplugin": {
-      "ios": {
-        "plugins": [
-            {
-                "type": "module",
-                "name": "xinstall-plugin",
-                "class": "XinstallDUPlugin"
+        "ios": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "xinstall-plugin",
+                    "class": "XinstallDUPlugin"
+                }
+            ],
+            "integrateType": "framework",
+            "hooksClass": "XinstallAppDelegateProxy",
+            "deploymentTarget": "9.0",
+            "parameters": {
+                "APP_KEY": {
+                    "des": "Xinstall管理后台分配的appkey",
+                    "key": "com.xinstall.APP_KEY"
+                }
             }
-        ],
-        "integrateType": "framework",
-        "hooksClass": "XinstallAppDelegateProxy",
-        "deploymentTarget": "9.0",
-  			"parameters": {
-  			    "APP_KEY": {
-  			        "des": "Xinstall管理后台分配的appkey",
-  			        "key": "com.xinstall.APP_KEY"
-  			    }
-  			}
-      },
-      "android": {
-        "plugins": [
-            {
-                "type": "module",
-                "name": "xinstall-plugin",
-                "class": "com.shubao.xinstallunisdk.XInstallModule"
-            }
-        ],
-		"abis": ["armeabi-v7a","arm64-v8a"],
-        "integrateType": "aar",
-        "minSdkVersion": "21",
-        "parameters": {
-            "APP_KEY": {
-                "des": "Xinstall管理后台分配的appkey",
-                "key": "com.xinstall.APP_KEY"
+        },
+        "android": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "xinstall-plugin",
+                    "class": "com.shubao.xinstallunisdk.XInstallModule"
+                }
+            ],
+            "abis": [
+                "armeabi-v7a",
+                "arm64-v8a"
+            ],
+            "integrateType": "aar",
+            "minSdkVersion": "21",
+            "parameters": {
+                "APP_KEY": {
+                    "des": "Xinstall管理后台分配的appkey",
+                    "key": "com.xinstall.APP_KEY"
+                }
             }
         }
-      }
     }
 }
